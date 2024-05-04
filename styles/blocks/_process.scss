@@ -1,0 +1,17 @@
+.process {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    counter-reset: custom-counter;
+    list-style: none;
+
+    @include mobile {
+      row-gap: 20px;
+    }
+  }
+
+  &__item {
+    counter-increment: custom-counter;
+  }
+}

@@ -1,0 +1,118 @@
+.accordion {
+  --indicatorVerticalRotate: 90deg;
+
+  padding: 41px 60px;
+  background-color: var(--color-gray);
+  border: var(--border);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow);
+  transition-duration: var(--transition-duration);
+
+  &[open] {
+    --indicatorVerticalRotate: 180deg;
+
+    background-color: var(--color-accent);
+  }
+
+  @include hover {
+    background-color: var(--color-accent);
+  }
+
+  @include tablet {
+    padding: 30px 40px;
+  }
+
+  @include mobile {
+    padding: 30px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 50px;
+
+    cursor: pointer;
+    user-select: none;
+
+    @include mobile {
+      column-gap: 28px;
+    }
+  }
+
+  &__title {
+    @include fluid-text(30, 18);
+
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+
+    @include mobile {
+      column-gap: 33px;
+    }
+
+    &::before {
+      content: counter(custom-counter, decimal-leading-zero);
+      font-size: 2em;
+
+      @include mobile {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__indicator {
+    @include flex-center;
+    @include square(58px);
+
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: var(--color-gray);
+    border: var(--border);
+    transition-duration: var(--transition-duration);
+
+    @include hover {
+      scale: 1.1;
+    }
+
+    @include tablet {
+      width: 40px;
+    }
+
+    @include mobile {
+      width: 30px;
+    }
+
+    &::before,
+    &::after {
+      @include abs-center;
+
+      content: "";
+      width: 45%;
+      height: 10%;
+      background-color: var(--color-dark);
+      transition-duration: var(--transition-duration);
+    }
+
+    &::after {
+      rotate: var(--indicatorVerticalRotate);
+    }
+  }
+
+  &__body {
+    --lineOffsetY: 30px;
+
+    margin-top: var(--lineOffsetY);
+    padding-top: var(--lineOffsetY);
+    border-top: var(--border);
+
+    @include tablet {
+      --lineOffsetY: 20px;
+    }
+
+    @include mobile {
+      --lineOffsetY: 15px;
+    }
+  }
+}
