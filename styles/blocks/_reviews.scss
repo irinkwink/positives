@@ -77,17 +77,5 @@
       color: var(--color-gray-alt);
       cursor: not-allowed;
     }
-
-    &_prev {
-      svg {
-        rotate: 210deg;
-      }
-    }
-
-    &_next {
-      svg {
-        rotate: 30deg;
-      }
-    }
   }
 }

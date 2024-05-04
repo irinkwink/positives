@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 prepros.config
+
+styles.css
+styles.css.map

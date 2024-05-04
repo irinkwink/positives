@@ -28,3 +28,16 @@
     width: 0 !important;
   }
 }
+
+.arrow {
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+
+  &_prev {
+    rotate: 180deg;
+  }
+
+  &_pointer {
+    rotate: -30deg;
+  }
+}
