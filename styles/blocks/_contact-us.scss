@@ -1,0 +1,70 @@
+.contact-us {
+  position: relative;
+  overflow: hidden;
+
+  @include mobile-above {
+    padding: 60px 100px 80px;
+    background-color: var(--color-gray);
+    border-radius: var(--border-radius-large);
+  }
+
+  @include tablet-above {
+    &::after {
+      --contactUsImageOffsetY: 62px;
+
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -1px;
+      translate: 50% -50%;
+
+      height: calc(100% - var(--contactUsImageOffsetY) * 2);
+      aspect-ratio: 1;
+      background-image: url(../../images/contact-us-bg.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      border-radius: var(--border-radius-large);
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet-above {
+      max-width: 556px;
+    }
+
+    @include mobile-above {
+      row-gap: 40px;
+    }
+  }
+
+  &__request-types,
+  &__body {
+    @include mobile {
+      background-color: var(--color-gray);
+    }
+  }
+
+  &__request-types {
+    @include mobile {
+      padding: 40px 52px 36px;
+      border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+
+    @include mobile {
+      padding: 10px 30px 50px;
+      margin-bottom: 30px;
+      row-gap: 20px;
+      border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
+    }
+  }
+}
