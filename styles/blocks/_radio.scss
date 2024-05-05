@@ -1,11 +1,19 @@
 .radio {
+  --radioEmulatorBorderColor: var(--color-dark);
+
   display: flex;
   align-items: center;
   column-gap: 14px;
   transition-duration: var(--transition-duration);
 
+  cursor: pointer;
+
   @include hover {
-    opacity: 0.7;
+    --radioEmulatorBorderColor: var(--color-accent);
+  }
+
+  &:focus-within {
+    --radioEmulatorBorderColor: var(--color-accent);
   }
 
   &__input {
@@ -20,7 +28,7 @@
 
     position: relative;
     background-color: var(--color-light);
-    border: var(--border);
+    border: 1px solid var(--radioEmulatorBorderColor);
     border-radius: 50%;
 
     &::after {

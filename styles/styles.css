@@ -520,6 +520,7 @@ h4,
   --fieldInputHoverBgColor: var(--color-dark);
 }
 .field__input {
+  caret-color: var(--color-accent);
   width: 100%;
   height: var(--fieldInputHeight);
   padding-inline: 28px;
@@ -547,11 +548,9 @@ h4,
   }
 }
 .field__input:focus {
+  background-color: var(--fieldInputHoverBgColor);
   border-color: var(--color-accent);
   outline: none;
-}
-.field__input:focus-visible {
-  outline: initial;
 }
 .field__input::-moz-placeholder {
   color: var(--fieldInputPlaceholderColor);
@@ -584,21 +583,26 @@ h4,
 }
 
 .radio {
+  --radioEmulatorBorderColor: var(--color-dark);
   display: flex;
   align-items: center;
   -moz-column-gap: 14px;
        column-gap: 14px;
   transition-duration: var(--transition-duration);
+  cursor: pointer;
 }
 @media (hover: hover) {
   .radio:hover {
-    opacity: 0.7;
+    --radioEmulatorBorderColor: var(--color-accent);
   }
 }
 @media (hover: none) {
   .radio:active {
-    opacity: 0.7;
+    --radioEmulatorBorderColor: var(--color-accent);
   }
+}
+.radio:focus-within {
+  --radioEmulatorBorderColor: var(--color-accent);
 }
 .radio__input:not(:checked) + .radio__emulator::after {
   opacity: 0;
@@ -611,7 +615,7 @@ h4,
   aspect-ratio: 1;
   position: relative;
   background-color: var(--color-light);
-  border: var(--border);
+  border: 1px solid var(--radioEmulatorBorderColor);
   border-radius: 50%;
 }
 .radio__emulator::after {

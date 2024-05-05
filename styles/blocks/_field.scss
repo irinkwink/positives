@@ -29,6 +29,7 @@
   }
 
   &__input {
+    caret-color: var(--color-accent);
     width: 100%;
     height: var(--fieldInputHeight);
     padding-inline: 28px;
@@ -48,12 +49,9 @@
     }
 
     &:focus {
+      background-color: var(--fieldInputHoverBgColor);
       border-color: var(--color-accent);
       outline: none;
-    }
-
-    &:focus-visible {
-      outline: initial;
     }
 
     &::placeholder {
