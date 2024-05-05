@@ -15,4 +15,8 @@
     max-width: 450px;
     min-width: 400px;
   }
+
+  @include mobile-s {
+    min-width: 100%;
+  }
 }

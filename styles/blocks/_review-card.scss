@@ -19,7 +19,7 @@
     border: 1px solid var(--color-accent);
     border-radius: var(--border-radius-large);
 
-    @include mobile {
+    @include tablet {
       padding: 30px;
     }
 

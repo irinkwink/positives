@@ -4,7 +4,8 @@
   --fieldInputBgColor: var(--color-light);
   --fieldInputBorderColor: var(--color-dark);
   --fieldInputPlaceholderColor: var(--color-gray-alt);
-  --fieldInputHoverBgColor: var(--color-accent);
+  --fieldInputHoverBgColor: var(--fieldInputBgColor);
+  --fieldInputHoverBorderColor: var(--color-accent);
 
   display: flex;
   flex-direction: column;
@@ -39,6 +40,7 @@
 
     @include hover {
       background-color: var(--fieldInputHoverBgColor);
+      border-color: var(--fieldInputHoverBorderColor);
     }
 
     @include mobile {
@@ -48,6 +50,10 @@
     &:focus {
       border-color: var(--color-accent);
       outline: none;
+    }
+
+    &:focus-visible {
+      outline: initial;
     }
 
     &::placeholder {

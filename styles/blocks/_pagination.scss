@@ -6,7 +6,7 @@
   &__button {
     @include reset-button;
     @include flex-center;
-    @include square(44px);
+    @include square(var(--pagination-button-size));
 
     color: var(--color-light);
 
